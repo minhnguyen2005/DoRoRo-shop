@@ -24,7 +24,6 @@
   color: #888;
 }
 header{
-  
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -69,6 +68,10 @@ header ul li a{
   place-items: top;
   margin-left: 50px;
   height: 100px;
+}
+.left-nav{
+  margin-left: 200px;
+  gap: 20px;
 }
 .mid-head{
   background-image: url(img/logo/VansLogoRedesign.jpg);

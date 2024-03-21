@@ -4,10 +4,10 @@ import AuthRouther from '../pages/Authrouther'
 import StoreContext from '../contexts/StoreContext'
 const Router = () => {
     const context =useContext(StoreContext)
-    console.log(context)
+    
   return (
 
-    <>{!context.store.email?<AuthRouther/>:<HomePage/>}</>
+    <>{!context.store.email ? <AuthRouther/>:<HomePage/>}</>
   )
 }
 

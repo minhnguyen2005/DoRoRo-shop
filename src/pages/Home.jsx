@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import'bootstrap/dist/css/bootstrap.min.css'
-import {Button,Badge, Input} from 'antd'
+import {Button,Badge, Input, Dropdown} from 'antd'
 import{} from '../data/shirts'
 import {Link} from 'react-router-dom'
 import {ShoppingCart}from 'iconsax-react'
+import StoreContext from '../contexts/StoreContext'
+
 const Home = () => {
+  const context=useContext(StoreContext)
+  const store=context.store
+
+  const items = [
+    {
+      key:"Đăng Xuất",
+      label:(<Button danger type='text' onClick={()=>{context.setStore({
+        email:''
+      })
+      localStorage.setItem('email','')
+    }}>Đăng xuất</Button>)
+    }
+  ]
   return (
     <>
 <header>
@@ -17,10 +32,16 @@ const Home = () => {
       <li className='link'><a><Link to={'/Home'}>Product</Link></a></li>
       <li className='link'><a><Link to={'/Home'}>Sale</Link></a></li>
       <li className='link'><a><Link to={'/Home'}>About</Link></a></li>
-     </ul>
-     <Badge count={(0)}>
+      <div className='left-nav'>
+      <Badge count={(0)}>
         <ShoppingCart  style={{ color:'black'}}/>
-        </Badge>
+      </Badge>
+      <Dropdown menu={{items}}>
+        <Link to={"/profile"}>{`Hi, ${store.email}`}</Link>
+      </Dropdown>
+      </div>
+     </ul>
+
      </div>
      </div>
      </header>

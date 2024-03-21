@@ -18,6 +18,7 @@ const LoginScreen = () => {
   const handleLogin=()=>{
      if (email==='tminh@gmail.com'&& password==='1234'){
       context.setStore({...context.store, email})
+      localStorage.setItem("email", email)
      }else{
       message.error("Email/Password ko đúng")
      }
