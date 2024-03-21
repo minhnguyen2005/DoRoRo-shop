@@ -1,5 +1,5 @@
 #root {
-  max-width: 1480px;
+  
   margin: 0 auto;
   padding: 2rem;
 }
@@ -60,8 +60,9 @@ header ul li a{
   font-weight: 500px;
 }
 .container{
-  width: 1200px;
+  width: 100%;
   color: white;
+  text-align: center;
 }
 .nav-bar{
   display: flex;

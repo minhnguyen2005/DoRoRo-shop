@@ -1,11 +1,37 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import'bootstrap/dist/css/bootstrap.min.css'
-import {Button} from 'antd'
+import {Button,Badge, Input} from 'antd'
 import{} from '../data/shirts'
+import {Link} from 'react-router-dom'
+import {ShoppingCart}from 'iconsax-react'
 const Home = () => {
   return (
     <>
+<header>
+     <div className='container'>
+     <div className='nav-bar '>
+     <a className='logo'><Link to={'/Home'}>DoRoRo</Link></a>
+     <ul>     
+      <li className='link'><a><Link to={'/Home'}>Home</Link></a></li>
+      <li className='link'><a><Link to={'/Home'}>Product</Link></a></li>
+      <li className='link'><a><Link to={'/Home'}>Sale</Link></a></li>
+      <li className='link'><a><Link to={'/Home'}>About</Link></a></li>
+     </ul>
+     <Badge count={(0)}>
+        <ShoppingCart  style={{ color:'black'}}/>
+        </Badge>
+     </div>
+     </div>
+     </header>
+    
+    <div className='mid-head'>
+      <div className=''>
+        <Input placeholder='Tìm kiếm' style={{width:700, height:40,}}></Input>
+        <Button style={{height:40, width:130, }}>Search</Button>
+      </div>
+      </div>
+
     <div className='content'>
     <h1>T-shirt</h1>
     </div>
